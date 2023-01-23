@@ -2,8 +2,9 @@
 
 
 select distance_to_pump,mpg,fuel_left, Case 
- when distance_to_pump/mpg <= fuel_left then true
+ when cast(distance_to_pump as float)/cast (mpg as float) <= cast(fuel_left as float) then true
  else false
  end as res
+ 
  
 from zerofuel
